@@ -7,13 +7,13 @@ variable "aws_region" {
 variable "access_key" {
  type        = string
  description = "access_key"
- default     = "AKIA42FMSBJN3VE2UL4Y"
+ default     = ""
 }
 
 variable "secret_key" {
  type        = string
  description = "secret_key"
- default     = "3hzQqRP8TOkG5pV5b9XwU50zYzt713AId9Poj36z"
+ default     = ""
 }
 
 
