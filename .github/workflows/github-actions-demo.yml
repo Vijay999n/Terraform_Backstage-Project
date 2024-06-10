@@ -26,12 +26,12 @@ jobs:
       - name: Terraform Validate
         id: validate
         run: terraform validate
-        working-directory: ./Terraform_Backstage-Project
+        working-directory: ./
       - name: Terraform Plan
         id: plan
         run: terraform plan
-        working-directory: ./Terraform_Backstage-Project
+        working-directory: ./
       - name: Terraform Apply
         id: apply
         run: terraform apply
-        working-directory: ./Terraform_Backstage-Project
+        working-directory: ./
