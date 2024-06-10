@@ -1,0 +1,37 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions
+
+on:
+  push:
+    branches:
+      - master
+      
+env:
+  aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+jobs:
+  build-infra:
+    name: terraform-ci-cd
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up terraform
+        uses: hashicorp/setup-terraform@v2
+      - name: Terraform Init
+        id: init
+        run: terraform init
+        working-directory: ./Terraform_Backstage-Project
+      - name: Terraform Validate
+        id: validate
+        run: terraform validate
+        working-directory: ./Terraform_Backstage-Project
+      - name: Terraform Plan
+        id: plan
+        run: terraform plan
+        working-directory: ./Terraform_Backstage-Project
+      - name: Terraform Apply
+        id: apply
+        run: terraform apply
+        working-directory: ./Terraform_Backstage-Project
