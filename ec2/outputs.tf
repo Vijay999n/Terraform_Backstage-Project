@@ -1,3 +1,3 @@
 output "my_intance" {
-    value = aws_instance.my_instance[count.index]
+    value = aws_instance.my_instance
 }
