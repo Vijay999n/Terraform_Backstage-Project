@@ -30,11 +30,3 @@ module "ec2" {
 
 }
 
-module "lb" {
-    source = "./lb"
-    sg_id = module.sg.sg_id
-    private_subnet_id = module.vpc.private_subnet_id
-    vpc_id = module.vpc.vpc_id
-    my_instance = module.ec2.my_instance
-
-}
