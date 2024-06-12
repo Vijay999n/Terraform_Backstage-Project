@@ -1,0 +1,12 @@
+apiVersion: scaffolder.backstage.io/v2
+kind: Component
+metadata:
+  name: Terraform_Backstage-Project
+  description: Terraform Project for managing infrastructure
+spec:
+  type: service
+  lifecycle: production
+  owner: team-a
+  dependsOn:
+    - my-other-component
+  system: my-system
